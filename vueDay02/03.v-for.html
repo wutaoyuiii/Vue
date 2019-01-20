@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no ">
+    <title>Document</title>
+    <script src='../vue.js'></script>
+</head>
+<body>
+    
+    <div id='app'>
+        <ul>
+            <!-- v-for="(item index) in list" -->
+            <li v-for="item in list">{{item}}</li>
+            <li v-for="item in list1">{{item.id}}--{{item.name}}</li>
+            <li v-for="item in list2">{{item}}</li>
+            <li v-for="count in 5">{{count}}</li>
+        </ul>
+    </div>
+
+<script>
+    new Vue ({
+        el : '#app',
+        data : {
+            list:[1,2,3],
+            list1:[
+                {id:"a",name:'ls'},
+                {id:"b",name:'ls'},
+                {id:"c",name:'ls'}
+            ],
+            list2:{
+                id:1,
+                name:'zs',
+                sex:'nan'
+            }
+        },
+        methods : {
+
+        }
+    });
+</script>
+
+</body>
+</html>

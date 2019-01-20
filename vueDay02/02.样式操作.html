@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no ">
+    <title>Document</title>
+    <script src='../vue.js'></script>
+    <style>
+        .active{
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id='app'>
+        <h1 :style="styleobj" :class="classobj">1111111111111</h1>
+    </div>
+
+<script>
+    new Vue ({
+        el : '#app',
+        data : {
+            styleobj:{
+                color:'red'
+            },
+            classobj:{
+                active:true
+            }
+        },
+        methods : {
+
+        }
+    });
+</script>
+
+</body>
+</html>

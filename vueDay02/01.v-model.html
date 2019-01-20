@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no ">
+    <title>Document</title>
+    <script src='../vue.js'></script>
+</head>
+<body>
+    
+    <div id='app'>
+        <h5 >{{msg}}</h5>
+        <input v-model="msg" type="text">
+    </div>
+
+<script>
+    new Vue ({
+        el : '#app',
+        data : {
+            msg:'123456789'
+        },
+        mounted : {
+
+        }
+    });
+</script>
+
+</body>
+</html>

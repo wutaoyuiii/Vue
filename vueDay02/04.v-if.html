@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no ">
+    <title>Document</title>
+    <script src='../vue.js'></script>
+</head>
+<body>
+    
+    <div id='app'>
+        <p v-if="flag">1111</p>
+        <p v-show="flag">1111</p>
+    </div>
+
+<script>
+    new Vue ({
+        el : '#app',
+        data : {
+            flag : true
+        },
+        methods : {
+
+        }
+    });
+</script>
+
+</body>
+</html>
