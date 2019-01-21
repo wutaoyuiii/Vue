@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no ">
+    <title>Document</title>
+    <script src='../vue.js'></script>
+</head>
+<body>
+    
+    <div id='app'>
+        <mycom></mycom>
+    </div>
+
+    <template id="tmp">
+        <div>
+            <p>这是template创建的组件</p>
+        </div>
+    </template>
+<script>
+    // 创建组件
+    // var com = Vue.extend({
+    //     template:'<p>这是Vue.extend创建的组件</p>'
+    // })
+    // 注册组件
+    // Vue.component('mycom',com);
+
+
+    // 创建并注册   上面的简写
+    // Vue.component('mycom', {
+    //     template:'<p>这是Vue.component创建的组件</p>'
+    // })
+    Vue.component('mycom', {
+        template:'#tmp'
+    })
+    new Vue ({
+        el : '#app',
+        data : {
+
+        },
+        methods : {
+
+        },
+        filters : {
+
+        },
+        derectives : {
+
+        }
+    });
+</script>
+
+</body>
+</html>

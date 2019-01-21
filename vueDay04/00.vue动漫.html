@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no ">
+    <title>Document</title>
+    <script src='../vue.js'></script>
+    <style>
+        .v-enter{
+            opacity: 0;
+            transform: translateX(150px);
+        }
+        .v-leave-to{
+            opacity: 0;
+            transform: translateY(150px); 
+        }
+        .v-enter-active,
+        .v-leave-active{
+            transition: all 0.4s;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id='app'>
+        <input type="button" value="切换" @click="flag=!flag">
+        <transition>
+            <p v-if="flag">1111111111</p>
+        </transition>
+    </div>
+
+<script>
+    new Vue ({
+        el : '#app',
+        data : {
+            flag:false
+        },
+        methods : {
+
+        },
+        filters : {
+
+        },
+        derectives : {
+
+        }
+    });
+</script>
+
+</body>
+</html>

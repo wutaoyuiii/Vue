@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no ">
+    <title>Document</title>
+    <script src='../vue.js'></script>
+</head>
+<body>
+    
+    <div id='app'>
+        <mycom></mycom>
+    </div>
+
+    <template id="tmp">
+        <div>
+            <p>这是template创建的私有组件</p>
+        </div>
+    </template>
+<script>
+  
+    new Vue ({
+        el : '#app',
+        data : {
+
+        },
+        methods : {
+
+        },
+        // 私有过滤器
+        filters : {
+
+        },
+        // 私有指令
+        derectives : {
+
+        },
+        // 私有组件
+        components : {
+            'mycom':{
+                template:'#tmp'
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
