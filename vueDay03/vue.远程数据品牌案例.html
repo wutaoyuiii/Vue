@@ -40,7 +40,7 @@
                 <td>{{item.name}}</td>
                 <td>{{item.time}}</td> 
                 <td>
-                  <a href="javascript:;" @click.prevent="del(item.id)">删除</a>
+                  <a href="" @click.prevent="del(item.id)">删除</a>
                 </td>
               </tr>
             </tbody>
@@ -57,8 +57,7 @@
             name:'',
             keywd:'',
             list:[
-                {id:1,name:'宝马',time:new Date()},
-                {id:2,name:'奔驰',time:new Date()}
+                
             ]
         },
         created(){
@@ -66,15 +65,27 @@
         },
         methods : {
             add(){
+                this.$http.post('http://vue.lovegf.cn:8899/api/addproduct',{name:this.name})
+                .then(function(res){
+                    this.name = "";
+                    this.getAllList();
+                })
             },
             getAllList(){
-                this.$http.get('http://vue.lovegf.cn:8899/api/getprodlist').then(function(res){
+                this.$http.get('http://vue.lovegf.cn:8899/api/getprodlist')
+                .then(function(res){
                     var res = res.body;
                     if(res.status === 0){   
-                        this.list=res.message
+                        this.list=res.message.slice(res.message.length-10,res.message.length)
                     }else{
                         alert('获取数据失败')
                     }
+                })
+            },
+            del(id){
+                this.$http.get('http://vue.lovegf.cn:8899/api/delproduct/'+id)
+                .then(res=>{
+                    this.getAllList()
                 })
             }
         }
