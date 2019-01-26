@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no ">
+    <title>Document</title>
+    <script src='../vue.js'></script>
+</head>
+<body>
+    
+    <div id='app'>
+        <com :preventmsg="msg"></com>
+    </div>
+
+
+<script>
+
+
+    new Vue ({
+        el : '#app',
+        data : {
+            msg:"我是data里面的数据"
+        },
+        methods : {
+
+        },
+        components:{
+            com:{
+                data() {
+                    return {
+                        name:'zs'
+                    }
+                },
+                template:"<h1>{{ name }}---这是私有组件{{ preventmsg }}</h1>",
+                props:['preventmsg']
+            },
+        },
+        filters : {
+
+        },
+        derectives : {
+
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no ">
+    <title>Document</title>
+    <script src='../vue.js'></script>
+</head>
+<body>
+    
+    <div id='app'>
+        <com @func="show"></com>
+
+    </div>
+
+    <template id="temp">
+        <div>
+            <h1>这是子组件</h1>
+            <button @click="myclick">按钮</button>
+        </div>
+    </template>
+<script>
+    var com = {
+        template:'#temp',
+        methods:{
+            myclick(){
+                this.$emit('func')
+            }
+        }
+    }
+    new Vue ({
+        el : '#app',
+        data : {
+
+        },
+        methods : {
+            show(){
+                console.log('我是父组件身上的方法')
+            }
+        },
+        components:{
+            com
+        },
+        filters : {
+
+        },
+        derectives : {
+
+        }
+    });
+</script>
+
+</body>
+</html>

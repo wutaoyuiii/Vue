@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no ">
+    <title>Document</title>
+    <script src='../vue.js'></script>
+    <script src="../vue-router-3.0.1.js"></script>
+</head>
+<body>
+    
+    <div id='app'>
+        <router-view></router-view>
+        <h1 v-for="item in list">{{item.id}}这是列表页</h1>
+    </div>
+
+
+
+<template id="list">
+    <div class="news-list-container">
+        <h1>这是列表页</h1>
+
+    </div>
+</template>    
+<script>
+    let listpage = {
+        template:"#list"
+    }
+    const router = new VueRouter({
+        routes: [
+            { path:'/', component:listpage }
+        ]    
+    })
+
+    new Vue ({
+        el : '#app',
+        data : {
+            list:[
+                {id:1},
+                {id:2}
+            ]
+        },
+        methods : {
+
+        },
+        router
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no ">
+    <title>Document</title>
+    <script src='../vue.js'></script>
+</head>
+<body>
+    
+    <div id='app'>
+        <com @func="show"></com>
+        {{msg}}
+    </div>
+
+    <template id="temp">
+        <div>
+            <h1>这是子组件</h1>
+            <button @click="myclick">按钮</button>
+        </div>
+    </template>
+<script>
+    var com = {
+        data(){
+            return {
+                id:1,
+                name:'zs'
+            }
+        },
+        template:'#temp',
+        methods:{
+            myclick(){
+                // 第一个是方法名 ,第二个以后是需要传递的参数
+                this.$emit('func',this.id)
+            }
+        }
+    }
+    new Vue ({
+        el : '#app',
+        data : {
+            msg:''
+        },
+        methods : {
+            show(data){
+                console.log('我是父组件身上的方法')
+                this.msg = data 
+            }
+        },
+        components:{
+            com
+        },
+        filters : {
+
+        },
+        derectives : {
+
+        }
+    });
+</script>
+
+</body>
+</html>
